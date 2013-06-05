@@ -1,0 +1,18 @@
+<div class="container">
+	<form method="post" action="/posts/<%= @post.id %>">
+	  <p><label>posting title: <input type="text" name="post[name]"></label></p>
+	  <p><label>price: <input type="text" name="post[price]"></label></p>
+	  <p><label>category: </label>
+	  <select name="post[category_id]">
+			<option value=1>community</option>
+			<option value=2>housing</option>
+			<option value=3>forsale</option>
+			<option value=4>pets</option>
+			<option value=5>jobs</option>
+			<option value=6>services</option>
+		</select></p>
+	  <p><label>posting description: <input type="text" name="post[description]"></label></p>
+	  <p><label>reply to: <input type="text" name="post[email]"></label></p>
+	  <p><input type="submit" value="Create Post"></p>
+	</form>
+</div>
