@@ -1,12 +1,12 @@
 class Post < ActiveRecord::Base
-  before_create do
-    # seed secret_key
-    # set created_at and updated_at to Time.now
-  end
+  before_create :create_secret_key
 
-  before_save do
-    # set updated_at to Time.now
-  end
+  
 
-  # Remember to create a migration!
+  protected
+
+  def create_secret_key
+    rand_key = (0...8).map{(97+rand(26)).chr}.join
+    self.secret_key = rand_key
+  end
 end
